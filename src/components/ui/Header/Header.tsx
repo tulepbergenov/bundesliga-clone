@@ -5,6 +5,7 @@ import {
 } from "@/src/assets/imgs/icons";
 import { HEADER_NAV_LINKS } from "@/src/constants";
 import classNames from "classnames";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -12,6 +13,7 @@ import { Container } from "../Container";
 
 export const Header = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -58,6 +60,7 @@ export const Header = () => {
       >
         <Container width="xl">
           <div className="flex items-center justify-between py-3">
+            <p>{t("home")}</p>
             <ul className="flex items-center gap-x-7 font-bold">
               <li>
                 <Link

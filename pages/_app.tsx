@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "react-toastify/dist/ReactToastify.css";
+import { appWithTranslation } from 'next-i18next'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -26,4 +27,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);
