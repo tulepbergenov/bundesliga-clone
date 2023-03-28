@@ -2,9 +2,11 @@ import { PublicLayout } from "@/src/layouts";
 import "@/styles/globals.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
+import "@fontsource/inter/900.css";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

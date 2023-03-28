@@ -1,0 +1,9 @@
+.body {
+  @apply flex-auto overflow-hidden px-5 text-sm text-gray-500;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}

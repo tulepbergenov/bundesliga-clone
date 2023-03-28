@@ -6,7 +6,7 @@ export const Heading = ({ as, children, className, ...props }: IHeading) => {
   return createElement(
     as,
     {
-      className: classNames("mb-4 text-5xl font-bold", className),
+      className: classNames("mb-4 pt-20 text-5xl font-bold", className),
       ...props,
     },
     children
