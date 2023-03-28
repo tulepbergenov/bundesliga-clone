@@ -8,6 +8,7 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { Container } from "../Container";
 
 export const Header = () => {
   const router = useRouter();
@@ -52,7 +53,7 @@ export const Header = () => {
   return (
     <header id="header">
       <div id="header-top" className="border-b bg-white text-xs">
-        <div className="container xl:max-w-screen-xl">
+        <Container width="xl">
           <div className="flex items-center justify-between py-3">
             <ul className="flex items-center gap-x-7 font-bold">
               <li>
@@ -112,10 +113,10 @@ export const Header = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </Container>
       </div>
       <div className="bg-white">
-        <div className="container xl:max-w-screen-xl">
+        <Container width="xl">
           <div className="flex items-center justify-between py-3">
             <Link
               href="/"
@@ -154,7 +155,7 @@ export const Header = () => {
               <UserIcon className="h-auto w-4" />
             </Link>
           </div>
-        </div>
+        </Container>
       </div>
     </header>
   );

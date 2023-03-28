@@ -1,6 +1,6 @@
 import { clubService } from "@/src/api";
+import { Club } from "@/src/components/pages";
 import { IClubData } from "@/src/interface";
-import { Club } from "@/src/pages";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 

@@ -1,6 +1,6 @@
 import { clubService } from "@/src/api";
+import { Clubs } from "@/src/components/pages";
 import { IClubs } from "@/src/interface";
-import { Clubs } from "@/src/pages";
 import type { GetStaticProps, NextPage } from "next";
 
 const ClubsPage: NextPage<IClubs> = ({ clubs }) => {

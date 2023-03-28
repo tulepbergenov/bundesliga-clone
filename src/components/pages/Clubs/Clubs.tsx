@@ -1,11 +1,11 @@
-import { Heading } from "@/src/components/ui";
+import { Container, Heading } from "@/src/components/ui";
 import Link from "next/link";
 import { IClubs } from "./Clubs.interface";
 
 export const Clubs = ({ clubs }: IClubs) => {
   return (
     <section>
-      <div className="container lg:max-w-screen-lg">
+      <Container>
         <div>
           <Heading as="h1">Clubs</Heading>
           <p className="mb-4 font-bold uppercase">SEASON 2022-2023</p>
@@ -29,7 +29,7 @@ export const Clubs = ({ clubs }: IClubs) => {
             ))}
           </ul>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

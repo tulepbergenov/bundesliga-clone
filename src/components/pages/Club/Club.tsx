@@ -1,13 +1,14 @@
+import { Container } from "../../ui";
 import { IClubPage } from "./Club.interface";
 
 export const Club = ({ club }: IClubPage) => {
   return (
     <section>
-      <div className="container lg:max-w-screen-lg">
+      <Container>
         <div>
           <h1>{club.name}</h1>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
