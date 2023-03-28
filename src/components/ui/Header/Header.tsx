@@ -52,14 +52,17 @@ export const Header = () => {
 
   return (
     <header id="header">
-      <div id="header-top" className="border-b bg-white text-xs">
+      <div
+        id="header-top"
+        className="border-b bg-white text-xs dark:border-b-[#000e14] dark:bg-[#34383c] dark:text-[#888c90]"
+      >
         <Container width="xl">
           <div className="flex items-center justify-between py-3">
             <ul className="flex items-center gap-x-7 font-bold">
               <li>
                 <Link
                   href="#"
-                  className="relative flex items-end gap-x-1 leading-none text-gray-900 before:absolute before:-bottom-1 before:left-0 before:h-px before:w-full before:bg-gray-900"
+                  className="relative flex items-end gap-x-1 leading-none text-gray-900 before:absolute before:-bottom-1 before:left-0 before:h-px before:w-full before:bg-gray-900 dark:text-white dark:before:bg-white"
                 >
                   <BasketballIcon className="h-auto w-4" />
                   <span>BL</span>
@@ -68,7 +71,7 @@ export const Header = () => {
               <li>
                 <Link
                   href="#"
-                  className="flex items-end gap-x-1 leading-none transition-colors duration-300 ease-in-out hover:text-gray-900"
+                  className="flex items-end gap-x-1 leading-none transition-colors duration-300 ease-in-out hover:text-gray-900 dark:hover:text-white"
                 >
                   <BasketballIcon className="h-auto w-4" />
                   <span>BL2</span>
@@ -77,7 +80,7 @@ export const Header = () => {
               <li>
                 <Link
                   href="#"
-                  className="flex items-end gap-x-1 leading-none transition-colors duration-300 ease-in-out hover:text-gray-900"
+                  className="flex items-end gap-x-1 leading-none transition-colors duration-300 ease-in-out hover:text-gray-900 dark:hover:text-white"
                 >
                   <BasketballIcon className="h-auto w-4" />
                   <span>VBL</span>
@@ -88,7 +91,7 @@ export const Header = () => {
               <li>
                 <Link
                   href="#"
-                  className="transition-colors duration-300 ease-in-out hover:text-gray-900"
+                  className="transition-colors duration-300 ease-in-out hover:text-gray-900 dark:text-inherit dark:hover:text-white"
                 >
                   <span>Broadcasters</span>
                 </Link>
@@ -96,7 +99,7 @@ export const Header = () => {
               <li>
                 <Link
                   href="#"
-                  className="flex items-center gap-x-1 transition-colors duration-300 ease-in-out hover:text-gray-900"
+                  className="flex items-center gap-x-1 transition-colors duration-300 ease-in-out hover:text-gray-900 dark:text-inherit dark:hover:text-white"
                 >
                   <span>Fantasy Manager</span>
                   <ThinArrowUpRightIcon />
@@ -105,7 +108,7 @@ export const Header = () => {
               <li>
                 <Link
                   href="#"
-                  className="flex items-center gap-x-1 transition-colors duration-300 ease-in-out hover:text-gray-900"
+                  className="flex items-center gap-x-1 transition-colors duration-300 ease-in-out hover:text-gray-900 dark:text-inherit dark:hover:text-white"
                 >
                   <span>DFL</span>
                   <ThinArrowUpRightIcon />
@@ -115,7 +118,7 @@ export const Header = () => {
           </div>
         </Container>
       </div>
-      <div className="bg-white">
+      <div className="bg-white dark:bg-[#34383c]">
         <Container width="xl">
           <div className="flex items-center justify-between py-3">
             <Link
@@ -123,7 +126,7 @@ export const Header = () => {
               className="grid grid-cols-[1.4rem_1fr] items-center gap-x-2 py-1"
             >
               <BasketballIcon className="h-auto w-full text-red-500" />
-              <p className="text-2xl font-bold uppercase leading-none text-gray-900">
+              <p className="text-2xl font-bold uppercase leading-none text-gray-900 dark:text-white">
                 Bundesliga
               </p>
             </Link>
@@ -134,11 +137,12 @@ export const Header = () => {
                     <Link
                       href={link.pathname}
                       className={classNames(
-                        "relative inline-block transition-colors duration-300 ease-in-out before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:bg-gray-900 before:transition-opacity before:duration-300 before:ease-in-out before:content-[''] hover:text-gray-900",
+                        "relative inline-block transition-colors duration-300 ease-in-out before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:bg-gray-900 before:transition-opacity before:duration-300 before:ease-in-out before:content-[''] hover:text-gray-900 dark:before:bg-white dark:hover:text-white",
                         {
                           ["before:opacity-0"]:
                             router.pathname !== link.pathname,
-                          ["text-gray-900"]: router.pathname === link.pathname,
+                          ["text-gray-900 dark:text-white"]:
+                            router.pathname === link.pathname,
                         }
                       )}
                     >
@@ -150,7 +154,7 @@ export const Header = () => {
             </nav>
             <Link
               href="https://bundesliga-clone-admin.vercel.app/"
-              className="flex h-6 w-6 items-center justify-center rounded-full border border-gray-500"
+              className="flex h-6 w-6 items-center justify-center rounded-full border border-gray-500 transition-all duration-300 ease-in-out hover:border-gray-900 hover:text-gray-900 dark:hover:border-white dark:hover:text-white"
             >
               <UserIcon className="h-auto w-4" />
             </Link>

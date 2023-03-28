@@ -28,7 +28,7 @@ export const NewsInnerPage = ({ article, lastNews }: INewsInnerPage) => {
               <li>
                 <Link
                   href="#facebook"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2d4474] text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2d4474] text-white transition-colors duration-300 ease-in-out hover:bg-[#3b5a99]"
                 >
                   <FacebookIcon className="h-6 w-full" />
                 </Link>
@@ -36,7 +36,7 @@ export const NewsInnerPage = ({ article, lastNews }: INewsInnerPage) => {
               <li>
                 <Link
                   href="#twitter"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#019fe9] text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-[#019fe9] text-white transition-colors duration-300 ease-in-out hover:bg-[#1fb7fe]"
                 >
                   <TwitterIcon className="h-6 w-full" />
                 </Link>
@@ -44,7 +44,7 @@ export const NewsInnerPage = ({ article, lastNews }: INewsInnerPage) => {
               <li>
                 <Link
                   href="#mailto:email@gmail.com"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 transition-colors duration-300 ease-in-out hover:bg-gray-200"
                 >
                   <EmailIcon className="h-6 w-full" />
                 </Link>
@@ -53,7 +53,7 @@ export const NewsInnerPage = ({ article, lastNews }: INewsInnerPage) => {
                 <button
                   type="button"
                   onClick={handleCopyToClipboard}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 align-middle"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 align-middle transition-colors duration-300 ease-in-out hover:bg-gray-200"
                 >
                   <CopyIcon className="h-6 w-full" />
                 </button>
