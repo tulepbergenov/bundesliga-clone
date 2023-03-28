@@ -1,6 +1,8 @@
+import { PublicLayout } from "@/src/layouts";
 import "@/styles/globals.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
+import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
@@ -13,7 +15,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider attribute="data-theme">
+        <PublicLayout>
+          <Component {...pageProps} />
+        </PublicLayout>
+      </ThemeProvider>
     </>
   );
 };

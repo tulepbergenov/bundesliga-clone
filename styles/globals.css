@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *::selection {
-  @apply bg-black text-white;
+  @apply bg-red-500 text-white;
 }
 
 html {
@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply rounded bg-black;
+  @apply rounded bg-red-500;
 }
 
 body::-webkit-scrollbar-track {
@@ -28,9 +28,17 @@ body {
 }
 
 body {
-  @apply bg-white text-base font-normal text-black;
+  @apply bg-gray-100 font-inter text-base font-normal text-gray-900;
 }
 
-#root {
+#__next {
   @apply flex min-h-full flex-col overflow-hidden;
+}
+
+#header {
+  @apply fixed top-0 left-0 z-10 w-full text-gray-500 shadow-md transition-all duration-300 ease-in-out;
+}
+
+#header[data-sticky="true"] {
+  @apply -translate-y-[var(--header-top-height)];
 }
