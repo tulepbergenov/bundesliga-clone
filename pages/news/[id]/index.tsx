@@ -2,6 +2,7 @@ import { newsService } from "@/src/api";
 import { NewsInnerPage as NewsInnerPageContent } from "@/src/components/pages";
 import { INewsInnerPageData } from "@/src/interface";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ParsedUrlQuery } from "querystring";
 
 const NewsInnerPage: NextPage<INewsInnerPageData> = ({ article, lastNews }) => {
@@ -29,6 +30,7 @@ export const getStaticPaths: GetStaticPaths<Params> = async () => {
 
 export const getStaticProps: GetStaticProps<INewsInnerPageData> = async ({
   params,
+  locale,
 }) => {
   const article = await newsService.getArticle(Number(params?.id));
   const articleData = await newsService.getNews();
@@ -38,6 +40,7 @@ export const getStaticProps: GetStaticProps<INewsInnerPageData> = async ({
 
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common", "header"])),
       article: article.data.data,
       lastNews: lastNews,
     },

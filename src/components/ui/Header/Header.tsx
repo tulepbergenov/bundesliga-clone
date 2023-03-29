@@ -13,7 +13,7 @@ import { Container } from "../Container";
 
 export const Header = () => {
   const router = useRouter();
-  const { t } = useTranslation();
+  const { t } = useTranslation("header");
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -60,7 +60,6 @@ export const Header = () => {
       >
         <Container width="xl">
           <div className="flex items-center justify-between py-3">
-            <p>{t("home")}</p>
             <ul className="flex items-center gap-x-7 font-bold">
               <li>
                 <Link
@@ -134,7 +133,7 @@ export const Header = () => {
               </p>
             </Link>
             <nav>
-              <ul className="flex items-center gap-x-3 text-sm">
+              <ul className="flex flex-wrap items-center gap-x-3 gap-y-1 px-10 text-sm">
                 {HEADER_NAV_LINKS.map((link, i) => (
                   <li key={i}>
                     <Link
@@ -149,7 +148,7 @@ export const Header = () => {
                         }
                       )}
                     >
-                      {link.name}
+                      {t(`${link.name}`)}
                     </Link>
                   </li>
                 ))}
