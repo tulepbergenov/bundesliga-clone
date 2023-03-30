@@ -1,6 +1,5 @@
 import { ArrowBottomIcon, SolidArrowDownIcon } from "@/src/assets/imgs/icons";
 import { IClub, IFootballer } from "@/src/interfaces";
-import { position } from "@/src/utils";
 import { Disclosure, Listbox, Transition } from "@headlessui/react";
 import classNames from "classnames";
 import Link from "next/link";
@@ -64,7 +63,9 @@ export const Players = ({ clubs, players }: IPlayers) => {
   const handleScrollToClub = (id: number) => {
     if (id) {
       const el = document.getElementById(`club-${id}`);
-      window.scroll(0, position(el));
+      if (el) {
+        el.scrollIntoView();
+      }
     }
   };
 
