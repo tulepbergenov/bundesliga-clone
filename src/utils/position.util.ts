@@ -7,4 +7,6 @@ export const position = (obj: any) => {
     } while ((obj = obj.offsetParent));
     return [currenttop];
   }
+
+  return 1;
 };
