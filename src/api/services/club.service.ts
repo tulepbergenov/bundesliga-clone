@@ -1,4 +1,4 @@
-import { IClubResponse, IClubsResponse } from "@/src/interface";
+import { IClubResponse, IClubsResponse } from "@/src/interfaces";
 import { AxiosResponse } from "axios";
 import { api } from "../axios";
 

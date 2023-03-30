@@ -1,4 +1,4 @@
-import { IArticle } from "@/src/interface/news.interface";
+import { IArticle } from "@/src/interfaces/news.interface";
 
 export interface IArticles {
   articles: IArticle[];

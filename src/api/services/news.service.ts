@@ -1,7 +1,7 @@
 import {
   IArticleResponse,
   INewsResponse,
-} from "@/src/interface/news.interface";
+} from "@/src/interfaces/news.interface";
 import { AxiosResponse } from "axios";
 import { api } from "../axios";
 

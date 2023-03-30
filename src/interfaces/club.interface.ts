@@ -1,3 +1,6 @@
+import { IFootballer } from "./footballer.interface";
+import { IArticle } from "./news.interface";
+
 export interface IClubsResponse {
   data: IClub[];
 }
@@ -12,6 +15,8 @@ export interface IClubs {
 
 export interface IClubData {
   club: IClub;
+  players: IFootballer[];
+  articles: IArticle[];
 }
 
 export interface IClub {

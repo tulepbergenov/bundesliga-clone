@@ -1,5 +1,5 @@
 import { BasketballIcon } from "@/src/assets/imgs/icons";
-import { IHomePageData } from "@/src/interface/home-page.interface";
+import { IHomePageData } from "@/src/interfaces/home-page.interface";
 import Link from "next/link";
 import { Navigation } from "swiper";
 import "swiper/css";
@@ -82,13 +82,16 @@ export const Home = ({ articles, lastArticle, clubs }: IHomePageData) => {
               >
                 {clubs.map((club) => (
                   <SwiperSlide key={club.id}>
-                    <div className="flex h-[114px] w-[100px] flex-col items-center justify-between bg-white py-5">
+                    <Link
+                      href={`/clubs/${club.id}`}
+                      className="flex h-[114px] w-[100px] flex-col items-center justify-between bg-white py-5"
+                    >
                       <div
                         style={{ backgroundColor: club.color }}
                         className="inline-block h-10 w-10 rounded-full"
                       ></div>
                       <p>{club.short_name}</p>
-                    </div>
+                    </Link>
                   </SwiperSlide>
                 ))}
               </Swiper>

@@ -1,6 +1,6 @@
 import { clubService } from "@/src/api";
 import { Clubs } from "@/src/components/pages";
-import { IClubs } from "@/src/interface";
+import { IClubs } from "@/src/interfaces";
 import type { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 

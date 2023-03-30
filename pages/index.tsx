@@ -1,6 +1,6 @@
 import { clubService, newsService } from "@/src/api";
 import { Home } from "@/src/components/pages";
-import { IHomePageData } from "@/src/interface/home-page.interface";
+import { IHomePageData } from "@/src/interfaces/home-page.interface";
 import type { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 

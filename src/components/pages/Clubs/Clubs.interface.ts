@@ -1,4 +1,4 @@
-import { IClub } from "@/src/interface";
+import { IClub } from "@/src/interfaces";
 
 export interface IClubs {
   clubs: IClub[];

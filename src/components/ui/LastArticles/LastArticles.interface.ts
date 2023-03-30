@@ -1,4 +1,4 @@
-import { IArticle } from "@/src/interface";
+import { IArticle } from "@/src/interfaces";
 
 export interface ILastArticles {
   articles: IArticle[];
