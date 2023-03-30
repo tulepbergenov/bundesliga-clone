@@ -8,5 +8,5 @@ export const position = (obj: any) => {
     return [currenttop];
   }
 
-  return 1;
+  return [0, 0];
 };
