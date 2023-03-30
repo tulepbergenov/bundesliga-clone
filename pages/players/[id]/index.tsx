@@ -3,9 +3,17 @@ import { Player } from "@/src/components/pages";
 import { IPlayerPageData } from "@/src/interfaces";
 import type { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 const PlayerPage: NextPage<IPlayerPageData> = ({ player, articles, club }) => {
-  return <Player player={player} articles={articles} club={club} />;
+  return (
+    <>
+      <Head>
+        <title>{player.name} | Bundesliga</title>
+      </Head>
+      <Player player={player} articles={articles} club={club} />
+    </>
+  );
 };
 
 export const getStaticPaths: any = async ({ locales }: any) => {

@@ -3,9 +3,17 @@ import { Club } from "@/src/components/pages";
 import { IClubData } from "@/src/interfaces";
 import type { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 const ClubPage: NextPage<IClubData> = ({ club, players, articles }) => {
-  return <Club club={club} players={players} articles={articles} />;
+  return (
+    <>
+      <Head>
+        <title>{club.name} | Bundesliga</title>
+      </Head>
+      <Club club={club} players={players} articles={articles} />
+    </>
+  );
 };
 
 export const getStaticPaths: any = async ({ locales }: any) => {

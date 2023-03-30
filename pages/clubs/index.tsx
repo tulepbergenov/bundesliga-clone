@@ -3,9 +3,17 @@ import { Clubs } from "@/src/components/pages";
 import { IClubs } from "@/src/interfaces";
 import type { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 const ClubsPage: NextPage<IClubs> = ({ clubs }) => {
-  return <Clubs clubs={clubs} />;
+  return (
+    <>
+      <Head>
+        <title>Clubs | Bundesliga</title>
+      </Head>
+      <Clubs clubs={clubs} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps<IClubs> = async ({ locale }) => {
