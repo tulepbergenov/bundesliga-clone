@@ -36,9 +36,21 @@ body {
 }
 
 #header {
-  @apply fixed top-0 left-0 z-10 w-full text-gray-500 shadow-md transition-all duration-300 ease-in-out;
+  @apply fixed top-0 left-0 z-50 w-full text-gray-500 shadow-md transition-all duration-300 ease-in-out;
 }
 
 #header[data-sticky="true"] {
   @apply -translate-y-[var(--header-top-height)];
+}
+
+.my-swaper-wrapper > .swiper-button-prev {
+  left: -24px !important;
+}
+
+.my-swaper-wrapper > .swiper-button-disabled {
+  opacity: 0 !important;
+}
+
+.my-swaper-wrapper > .swiper-button-next {
+  right: -24px !important;
 }

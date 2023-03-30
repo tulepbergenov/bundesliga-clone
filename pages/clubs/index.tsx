@@ -9,15 +9,21 @@ const ClubsPage: NextPage<IClubs> = ({ clubs }) => {
 };
 
 export const getStaticProps: GetStaticProps<IClubs> = async ({ locale }) => {
-  const res = await clubService.getClubs();
+  try {
+    const res = await clubService.getClubs();
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "header"])),
-      clubs: res.data.data,
-    },
-    revalidate: 60,
-  };
+    return {
+      props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common", "header"])),
+        clubs: res.data.data,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default ClubsPage;

@@ -11,6 +11,8 @@ const TablePage: NextPage<ITablePage> = ({ clubs, articles }) => {
 export const getStaticProps: GetStaticProps<ITablePage> = async ({
   locale,
 }) => {
+  try {
+
   const res = await clubService.getClubs();
   const articleData = await newsService.getNews();
 
@@ -22,6 +24,11 @@ export const getStaticProps: GetStaticProps<ITablePage> = async ({
     },
     revalidate: 60,
   };
+  } catch (error) {
+    return {
+      notFound:true
+    }
+  }
 };
 
 export default TablePage;

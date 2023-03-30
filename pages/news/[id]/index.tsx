@@ -32,19 +32,25 @@ export const getStaticProps: GetStaticProps<INewsInnerPageData> = async ({
   params,
   locale,
 }) => {
-  const article = await newsService.getArticle(Number(params?.id));
-  const articleData = await newsService.getNews();
-  const articles = articleData.data.data;
-  articles.reverse();
-  const lastNews = articles.slice(0, 3);
+  try {
+    const article = await newsService.getArticle(Number(params?.id));
+    const articleData = await newsService.getNews();
+    const articles = articleData.data.data;
+    articles.reverse();
+    const lastNews = articles.slice(0, 3);
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "header"])),
-      article: article.data.data,
-      lastNews: lastNews,
-    },
-  };
+    return {
+      props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common", "header"])),
+        article: article.data.data,
+        lastNews: lastNews,
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export default NewsInnerPage;
